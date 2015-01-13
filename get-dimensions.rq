@@ -1,0 +1,10 @@
+# Get a list of the dimensions used by the harmonized dataset
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+SELECT DISTINCT ?dimension FROM <urn:graph:cedar:release> WHERE {
+	?d a qb:DataSet.
+	?d qb:structure ?dsd.
+	?dsd a qb:DataStructureDefinition.
+	?dsd qb:component [ qb:dimension ?dimension ].
+}

@@ -1,0 +1,7 @@
+# Count the number of triples per graph
+
+SELECT ?graph (COUNT(*) AS ?triples) WHERE { 
+	GRAPH ?graph {
+		?s ?p ?o.
+	}
+}

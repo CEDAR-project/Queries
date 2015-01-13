@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
+PREFIX tablink: <http://bit.ly/cedar-tablink#>
+
+SELECT ?sheet ?cell ?value FROM <urn:graph:cedar:raw-data> WHERE {
+ ?seedcell a tablink:RowHeader .
+ ?seedcell tablink:value "__seed_text__" .
+ ?seedcell tablink:parentCell ?parent.
+ ?cell a tablink:RowHeader .
+ ?cell tablink:parentCell ?parent.
+ ?cell tablink:value ?value .
+ ?cell tablink:sheet ?sheet .
+}
