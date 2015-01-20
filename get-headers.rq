@@ -1,0 +1,15 @@
+PREFIX tablink: <http://bit.ly/cedar-tablink#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?cell ?literal ?header_type ?dataset_name
+FROM <urn:graph:cedar:raw-data> 
+WHERE {
+	?cell a ?header_type.
+	?cell tablink:value ?literal.
+	?cell tablink:sheet ?sheet. 
+	__DATA_SET__ dcterms:hasPart ?sheet.
+	__DATA_SET__ rdfs:label ?dataset_name.
+	FILTER (?header_type IN (tablink:RowHeader,tablink:ColumnHeader))
+	FILTER (?literal != "")
+} 
