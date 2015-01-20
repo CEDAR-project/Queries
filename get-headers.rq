@@ -7,9 +7,9 @@ FROM <urn:graph:cedar:raw-data>
 WHERE {
 	?cell a ?header_type.
 	?cell tablink:value ?literal.
-	?cell tablink:sheet ?sheet. 
-	__DATA_SET__ dcterms:hasPart ?sheet.
-	__DATA_SET__ rdfs:label ?dataset_name.
+	?cell tablink:sheet __DATA_SET__. 
+	?dataset dcterms:hasPart __DATA_SET__.
+	?dataset rdfs:label ?dataset_name.
 	FILTER (?header_type IN (tablink:RowHeader,tablink:ColumnHeader))
 	FILTER (?literal != "")
 } 
