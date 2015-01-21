@@ -1,0 +1,18 @@
+# Get the number of sheets parsed as raw-data
+
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX tablink: <http://bit.ly/cedar-tablink#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?datasetname ?nbsheets (COUNT(?sheet) AS ?total) 
+FROM <urn:graph:cedar:raw-data> 
+WHERE { 
+	?dataset a dcat:DataSet.
+	?dataset dcterms:hasPart ?sheet.
+	?dataset prov:wasDerivedFrom ?excelfile.
+	?dataset rdfs:label ?datasetname.
+	?excelfile a dcat:DataSet.
+	?excelfile tablink:sheets ?nbsheets.
+} ORDER BY ?datasetname

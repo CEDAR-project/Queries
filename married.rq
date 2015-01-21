@@ -12,8 +12,8 @@ SELECT ?year (SUM(?pop) AS ?total) FROM <urn:graph:cedar:release> WHERE {
 	?obs maritalstatus:maritalStatus maritalstatus:married.
 	?obs cedarterms:population ?pop.
 	?obs sdmx-dimension:sex sdmx-code:sex-F.
-	FILTER NOT EXISTS {
-		?obs cedarterms:ignore "1".
+	FILTER NOT EXISTS { 
+		?obs cedarterms:isTotal "1"^^<http://www.w3.org/2001/XMLSchema#integer>.
 	}
 	?slice a qb:Slice.
 	?slice qb:observation ?obs.
