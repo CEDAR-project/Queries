@@ -5,6 +5,7 @@ PREFIX maritalstatus: <http://bit.ly/cedar-maritalstatus#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
  
 SELECT DISTINCT * FROM <urn:graph:cedar:release> WHERE {
 	?obs a qb:Observation.
