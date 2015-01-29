@@ -1,0 +1,20 @@
+# Reconstructing hierarchical headers (max depth 3)
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
+PREFIX tablink: <http://bit.ly/cedar-tablink#>
+
+SELECT DISTINCT ?otherparentvalue ?parentvalue ?value FROM <urn:graph:cedar:raw-data> WHERE {
+  ?seedcell a tablink:ColumnHeader .
+  ?seedcell tablink:value ?value .
+  OPTIONAL {
+   ?seedcell tablink:parentCell ?parent . 
+   ?parent tablink:value ?parentvalue .
+   OPTIONAL {
+    ?parent tablink:parentCell ?otherparent .
+    ?otherparent tablink:value ?otherparentvalue .   
+    }
+  }
+  FILTER (regex(?seedcell, "VT_1869_01_H1", "i"))
+} GROUP BY ?parentvalue ORDER BY ?parentvalue LIMIT 100
+
