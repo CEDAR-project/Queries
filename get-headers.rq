@@ -3,7 +3,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?cell ?literal ?header_type ?dataset_name
-FROM <urn:graph:cedar:raw-data> 
+FROM <urn:graph:cedar-mini:raw-data> 
 WHERE {
 	?cell a ?header_type.
 	?cell tablink:value ?literal.
