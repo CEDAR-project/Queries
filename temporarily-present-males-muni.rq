@@ -1,0 +1,19 @@
+# Column of temporarily present men in 1879 in Friesland, Achtkarspelen
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX cedar: <http://bit.ly/cedar#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
+
+SELECT *
+FROM <urn:graph:cedar-mini:release>
+WHERE { ?obs a qb:Observation . 
+        ?obs ?p ?val . 
+        ?obs sdmx-dimension:sex sdmx-code:sex-M .
+        ?obs sdmx-dimension:refArea <http://www.gemeentegeschiedenis.nl/amco/10199> .
+        ?obs cedar:residenceStatus <http://bit.ly/cedar-residenceStatus#TijdelijkAanwezig> .
+        ?slice a qb:Slice.
+	?slice qb:observation ?obs.
+	?slice sdmx-dimension:refPeriod 1879 .
+        FILTER (regex(?obs, "VT_1879_01_H1-S0", "i"))        
+}
