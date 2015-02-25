@@ -1,4 +1,4 @@
-# Totals per municipality, cross year
+# Totals per municipality, cross years, ordered by municipality
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://bit.ly/cedar#>
@@ -17,8 +17,8 @@ WHERE { ?obs a qb:Observation .
         ?slice sdmx-dimension:refPeriod ?year .
         FILTER (NOT EXISTS {?obs cedar:houseType ?house }) .
         FILTER (NOT EXISTS {?obs cedar:isTotal ?total }) .
-        FILTER (?year IN (1879, 1889)) .
-        FILTER (regex(?obs, "VT_1879_01_H1-S0|VT_1889_03_H1-S0", "i")) .
-} GROUP BY ?municipality ?year
+        FILTER (?year IN (1879, 1899)) .
+        FILTER (regex(?obs, "VT_1879_01_H1-S0|VT_1899_07_H1-S0", "i")) .
+} GROUP BY ?municipality ?year ORDER BY ?municipality
 
 
