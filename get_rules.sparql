@@ -1,0 +1,12 @@
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?target ?p ?o FROM <urn:graph:cedar-mini:rules> WHERE {
+	[] a oa:Annotation ;
+		oa:hasBody [?p ?o];
+		oa:hasTarget ?target ;
+		prov:wasGeneratedBy <__MAPPING_ACTIVITY__>.
+	FILTER (?p NOT IN (rdfs:label, rdf:type))
+}
