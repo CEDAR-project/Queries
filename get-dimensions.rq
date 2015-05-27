@@ -2,7 +2,7 @@
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 
-SELECT DISTINCT ?dimension FROM <urn:graph:cedar:release> WHERE {
+SELECT DISTINCT ?dimension FROM <urn:graph:cedar-mini:release> WHERE {
 	?d a qb:DataSet.
 	?d qb:structure ?dsd.
 	?dsd a qb:DataStructureDefinition.

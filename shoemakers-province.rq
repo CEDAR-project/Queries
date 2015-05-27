@@ -7,7 +7,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
  
-SELECT ?year ?location (SUM(?pop) AS ?population) FROM <urn:graph:cedar:release> WHERE {
+SELECT ?year ?location (SUM(?pop) AS ?population) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
     ?obs sdmx-dimension:refArea ?location.
     ?obs cedarterms:occupation <http://bit.ly/cedar-hisco#hisco-80110>.

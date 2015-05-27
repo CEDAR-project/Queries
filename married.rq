@@ -7,7 +7,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
  
-SELECT ?year (SUM(?pop) AS ?total) FROM <urn:graph:cedar:release> WHERE {
+SELECT ?year (SUM(?pop) AS ?total) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
 	?obs maritalstatus:maritalStatus maritalstatus:married.
 	?obs cedarterms:population ?pop.

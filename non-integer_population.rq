@@ -3,7 +3,7 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
  
-SELECT ?obs FROM <urn:graph:cedar:release> WHERE {
+SELECT ?obs FROM <urn:graph:cedar-mini:release> WHERE {
        ?obs a qb:Observation .
        ?obs cedarterms:population ?population .
        FILTER (datatype(?population) != xsd:integer)

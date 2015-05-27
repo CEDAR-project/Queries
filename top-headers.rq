@@ -9,7 +9,7 @@ PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
 PREFIX tablink: <http://bit.ly/cedar-tablink#>
  
-SELECT ?value (COUNT(?foo) as ?refs) FROM <urn:graph:cedar:raw-data> WHERE {
+SELECT ?value (COUNT(?foo) as ?refs) FROM <urn:graph:cedar-mini:raw-data> WHERE {
 	?foo a ?type .
 	?foo tablink:value ?value .
 	FILTER (?type in (tablink:ColumnHeader, tablink:RowHeader))

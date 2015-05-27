@@ -7,7 +7,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
 
-SELECT DISTINCT ?year (SUM(?pop) AS ?houses) FROM <urn:graph:cedar:release> WHERE {
+SELECT DISTINCT ?year (SUM(?pop) AS ?houses) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation .
   	?obs cedarterms:houseType cedarterms:house-2-72 .
     ?obs cedarterms:population ?pop.

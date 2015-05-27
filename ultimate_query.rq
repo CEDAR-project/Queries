@@ -7,7 +7,7 @@ PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://bit.ly/cedar#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
  
-SELECT DISTINCT * FROM <urn:graph:cedar:release> WHERE {
+SELECT DISTINCT * FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
 	?obs sdmx-dimension:refArea ?location.
 	?obs cedarterms:population ?pop.

@@ -7,7 +7,7 @@ PREFIX tablink: <http://bit.ly/cedar-tablink#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?datasetname ?nbsheets (COUNT(?sheet) AS ?total) 
-FROM <urn:graph:cedar:raw-data> 
+FROM <urn:graph:cedar-mini:raw-data> 
 WHERE { 
 	?dataset a dcat:DataSet.
 	?dataset dcterms:hasPart ?sheet.
