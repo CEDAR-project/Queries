@@ -1,0 +1,5 @@
+# Description of everything linked to an integrated observation
+
+SELECT * FROM <urn:graph:cedar-mini:release> WHERE {
+  <http://lod.cedar-project.nl:8888/cedar/resource/VT_1899_04_H1-S0-G2081-h> ?p ?o .
+}
