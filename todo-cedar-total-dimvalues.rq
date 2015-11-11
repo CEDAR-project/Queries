@@ -1,0 +1,19 @@
+# Total dimension values (headers) in the dataset
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX cedar: <http://bit.ly/cedar#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
+PREFIX oa: <http://www.w3.org/ns/openannotation/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tablink: <http://bit.ly/cedar-tablink#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT COUNT((?postfix) AS ?remain)
+FROM <urn:graph:cedar:rules>
+FROM <urn:graph:cedar:raw-data>
+WHERE {
+	?cell a tablink:RowHeader .
+	?cell rdfs:label ?label .
+  BIND (strafter(?label,"=") AS ?postfix)
+}
