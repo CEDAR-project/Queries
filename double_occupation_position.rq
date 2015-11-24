@@ -1,7 +1,7 @@
 # Observations with more than one occupation position
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX cedarterms: <http://bit.ly/cedar#>
+PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
  
 SELECT ?obs FROM <urn:graph:cedar-mini:release> WHERE {
        ?obs a qb:Observation.

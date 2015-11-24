@@ -1,7 +1,7 @@
 # Number of houses according to their type per municipality, from 1859 until 1920
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX cedar: <http://bit.ly/cedar#>
+PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
  

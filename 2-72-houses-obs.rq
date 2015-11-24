@@ -2,10 +2,10 @@
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
-PREFIX maritalstatus: <http://bit.ly/cedar-maritalstatus#>
+PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
-PREFIX cedarterms: <http://bit.ly/cedar#>
+PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
 
 SELECT * FROM <urn:graph:cedar-mini:release> WHERE {
 

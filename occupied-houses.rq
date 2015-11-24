@@ -1,7 +1,7 @@
 # Occupied houses per municipality, 1879
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX cedar: <http://bit.ly/cedar#>
+PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
  
@@ -10,7 +10,7 @@ FROM <urn:graph:cedar-mini:release>
 WHERE { ?obs a qb:Observation . 
         ?obs cedar:population ?pop . 
         ?obs sdmx-dimension:refArea ?municipality .
-        ?obs cedar:houseType <http://bit.ly/cedar#house-BewoondeHuizen> .        
+        ?obs cedar:houseType <http://lod.cedar-project.nl/vocab/cedar#house-BewoondeHuizen> .        
         ?slice a qb:Slice.
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod 1879 .

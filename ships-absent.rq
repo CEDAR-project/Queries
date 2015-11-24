@@ -1,7 +1,7 @@
 # Temporarily present inhabitants in ships per municipality, 1899
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX cedar: <http://bit.ly/cedar#>
+PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
  
@@ -10,8 +10,8 @@ FROM <urn:graph:cedar-mini:release>
 WHERE { ?obs a qb:Observation . 
         ?obs cedar:population ?pop . 
         ?obs sdmx-dimension:refArea ?municipality .
-        ?obs cedar:houseType <http://bit.ly/cedar#house-BewoondeSchepen> . 
-        ?obs cedar:residenceStatus <http://bit.ly/cedar-residenceStatus#TijdelijkAanwezig> .          
+        ?obs cedar:houseType <http://lod.cedar-project.nl/vocab/cedar#house-BewoondeSchepen> . 
+        ?obs cedar:residenceStatus <http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAanwezig> .          
         ?slice a qb:Slice.
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod 1899 .

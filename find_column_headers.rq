@@ -1,6 +1,6 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
-PREFIX tablink: <http://bit.ly/cedar-tablink#>
+PREFIX tablink: <http://lod.cedar-project.nl/vocab/cedar-tablink#>
 
 SELECT ?sheet ?cell ?value FROM <urn:graph:cedar-mini:raw-data> WHERE {
  ?seedcell a tablink:RowHeader .

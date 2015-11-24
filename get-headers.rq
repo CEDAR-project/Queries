@@ -1,4 +1,4 @@
-PREFIX tablink: <http://bit.ly/cedar-tablink#>
+PREFIX tablink: <http://lod.cedar-project.nl/vocab/cedar-tablink#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
