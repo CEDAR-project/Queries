@@ -1,5 +1,6 @@
 # Number of temporarily present males per municipality from 1869 until 1920
-#+tags: Residence status
+#+ tags: 
+#+   - residenceStatus
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
