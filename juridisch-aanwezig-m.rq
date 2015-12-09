@@ -1,5 +1,6 @@
 # Legally registered and present male inhabitants per municipality, 1879
-#+tags: Residence status
+#+ tags: 
+#+   - residenceStatus
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
