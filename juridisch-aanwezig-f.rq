@@ -1,6 +1,6 @@
 # Legally registered and present female inhabitants per municipality, 1879
 #+ tags: 
-#+   - Residence status
+#+   - residenceStatus
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
