@@ -1,0 +1,23 @@
+
+# Query for all data points involving residence status
+
+PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
+PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
+PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+ 
+SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
+	?obs a qb:Observation.
+	?obs sdmx-dimension:refArea ?_location_iri.
+	?obs cedarterms:population ?pop.
+	?slice a qb:Slice.
+	?slice qb:observation ?obs.
+	?slice sdmx-dimension:refPeriod ?_year_integer.
+	OPTIONAL {?obs maritalstatus:maritalStatus ?_maritalstatus.}
+	OPTIONAL {?obs sdmx-dimension:sex ?_sex.}
+	OPTIONAL {?obs cedarterms:residenceStatus ?_residence.}
+	FILTER (NOT EXISTS (?obs cedarterms:isTotal ?total })
+}
+
