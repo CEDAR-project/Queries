@@ -1,6 +1,5 @@
-
-
 # Query for all data points involving residence status
+#+tags: Residence status
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
 PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
