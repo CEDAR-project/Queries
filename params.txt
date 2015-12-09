@@ -1,6 +1,5 @@
-
-<http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAanwezig>
-<http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAfwezig>
-<http://purl.org/linked-data/sdmx/2009/code#sex-M>
-<http://purl.org/linked-data/sdmx/2009/code#sex-F>
-<http://www.gemeentegeschiedenis.nl/amco/11150> #Amsterdam
+http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAanwezig
+http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAfwezig
+http://purl.org/linked-data/sdmx/2009/code#sex-M
+http://purl.org/linked-data/sdmx/2009/code#sex-F
+http://www.gemeentegeschiedenis.nl/amco/11150 #Amsterdam
