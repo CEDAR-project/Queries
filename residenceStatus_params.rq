@@ -1,4 +1,5 @@
 
+
 # Query for all data points involving residence status
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
@@ -15,9 +16,8 @@ SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
 	?slice a qb:Slice.
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod ?_year_integer.
-	OPTIONAL {?obs maritalstatus:maritalStatus ?_maritalstatus.}
-	OPTIONAL {?obs sdmx-dimension:sex ?_sex.}
-	OPTIONAL {?obs cedarterms:residenceStatus ?_residence.}
+	?obs sdmx-dimension:sex ?_sex.
+	?obs cedarterms:residenceStatus ?_residenceStatus.
 	FILTER (NOT EXISTS {?obs cedarterms:isTotal ?total })
 }
 
