@@ -2,15 +2,15 @@
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
-PREFIX maritalstatus: <http://bit.ly/cedar-maritalstatus#>
+PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
-PREFIX cedarterms: <http://bit.ly/cedar#>
+PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
  
-SELECT ?year ?location (SUM(?pop) AS ?population) FROM <urn:graph:cedar:release> WHERE {
+SELECT ?year ?location (SUM(?pop) AS ?population) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
     ?obs sdmx-dimension:refArea ?location.
-    ?obs cedarterms:occupation <http://bit.ly/cedar-hisco#hisco-80110>.
+    ?obs cedarterms:occupation <http://lod.cedar-project.nl/vocab/cedar-hisco#hisco-80110>.
   	?obs cedarterms:population ?pop.
 	FILTER NOT EXISTS { 
 		?obs cedarterms:isTotal "1"^^<http://www.w3.org/2001/XMLSchema#integer>.

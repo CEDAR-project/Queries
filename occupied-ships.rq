@@ -1,22 +1,19 @@
-# Totals per municipality
-
+# Occupied living ships per municipality, 1879
+ 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
-
+ 
 SELECT ?municipality (SUM(?pop) AS ?tot)
 FROM <urn:graph:cedar-mini:release>
 WHERE { ?obs a qb:Observation . 
         ?obs cedar:population ?pop . 
-        ?obs sdmx-dimension:sex sdmx-code:sex-M .
         ?obs sdmx-dimension:refArea ?municipality .
-        ?obs cedar:residenceStatus <http://lod.cedar-project.nl/vocab/cedar-residenceStatus#TijdelijkAanwezig> .        
+        ?obs cedar:houseType <http://lod.cedar-project.nl/vocab/cedar#house-BewoondeSchepen> .       
         ?slice a qb:Slice.
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod 1879 .
-        FILTER (NOT EXISTS {?obs cedar:houseType ?house }) .
+        FILTER (NOT EXISTS {?obs cedar:residenceStatus ?residenceStatus }) .
         FILTER (NOT EXISTS {?obs cedar:isTotal ?total }) .
-        FILTER (regex(?obs, "VT_1879_01_H1-S0", "i"))
-} GROUP BY ?municipality
-
+} GROUP BY ?municipality ORDER BY ?municipality

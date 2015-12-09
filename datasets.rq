@@ -3,7 +3,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 prefix dcat: <http://www.w3.org/ns/dcat#>
 prefix dcterms: <http://purl.org/dc/terms/>
 
-SELECT distinct ?title (Count(distinct ?d) AS ?total) FROM <urn:graph:cedar:raw-data> WHERE {
+SELECT distinct ?title (Count(distinct ?d) AS ?total) FROM <urn:graph:cedar-mini:raw-data> WHERE {
 	?d a dcat:DataSet.
 	?d prov:wasDerivedFrom ?src.
 	?src a dcat:DataSet.

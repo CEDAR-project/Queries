@@ -5,7 +5,7 @@ PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?dataset ?source ?dump (COUNT(DISTINCT ?sheet) AS ?nb_sheets) FROM <urn:graph:cedar:raw-data> WHERE {
+SELECT DISTINCT ?dataset ?source ?dump (COUNT(DISTINCT ?sheet) AS ?nb_sheets) FROM <urn:graph:cedar-mini:raw-data> WHERE {
 	?dataset a dcat:DataSet.
 	?dataset prov:wasDerivedFrom [ dcat:distribution [ rdfs:label ?source ] ].
 	?dataset dcat:distribution [ dcterms:accessURL ?dump ].
