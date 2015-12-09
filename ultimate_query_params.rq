@@ -18,6 +18,6 @@ SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
 	OPTIONAL {?obs maritalstatus:maritalStatus ?_maritalstatus.}
 	OPTIONAL {?obs sdmx-dimension:sex ?_sex.}
 	OPTIONAL {?obs cedarterms:residenceStatus ?_residence.}
-	FILTER (NOT EXISTS (?obs cedarterms:isTotal ?total })
+	FILTER (NOT EXISTS {?obs cedarterms:isTotal ?total })
 }
 
