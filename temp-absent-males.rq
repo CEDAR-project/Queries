@@ -1,5 +1,6 @@
 # Temporarily absent males per municipality, 1879
-#+tags: Residence status
+#+ tags: 
+#+   - residenceStatus
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
