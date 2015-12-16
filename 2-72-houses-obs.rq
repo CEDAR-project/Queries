@@ -1,6 +1,6 @@
 #+ summary: Observations of the house 2-72 by years count
-#+ tags:
-	- houses
+#+ tags: 
+#+   - houses
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
