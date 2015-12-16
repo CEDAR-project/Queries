@@ -1,4 +1,6 @@
-# House count of type 2-72 over the years
+#+ summary: House count of type 2-72 over the years
+#+ tags: 
+#+   - houses
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
