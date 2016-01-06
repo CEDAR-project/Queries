@@ -1,6 +1,6 @@
 #+ summary: Number of triples per graph
 #+ tags: 
-#+   - dataStore 
+#+   - metadata 
 
 SELECT ?graph (COUNT(*) AS ?triples) WHERE { 
 	GRAPH ?graph {

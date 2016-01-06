@@ -1,6 +1,6 @@
 #+ summary: Resources linked to observation <http://lod.cedar-project.nl:8888/cedar/resource/VT_1889_08_H1-S0-H1953-h>
 #+ tags:
-#+   - dataStore
+#+   - metadata
 
 SELECT * FROM <urn:graph:cedar-mini:release> WHERE {
   <http://lod.cedar-project.nl:8888/cedar/resource/VT_1889_08_H1-S0-H1953-h> ?p ?o .

@@ -1,6 +1,6 @@
 #+ summary: Dimensions used in the harmonized dataset
 #+ tags:
-#+   - dataStore
+#+   - metadata
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 
