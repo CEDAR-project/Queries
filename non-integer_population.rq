@@ -1,4 +1,6 @@
-# Observations with non-integer population counts
+#+ summary: Observations with non-integer population counts
+#+ tags: 
+#+   - errorDetection
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>

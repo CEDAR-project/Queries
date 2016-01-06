@@ -1,4 +1,6 @@
-# Get a list of the dimensions used by the harmonized dataset
+#+ summary: Dimensions used in the harmonized dataset
+#+ tags:
+#+   - dataStore
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 

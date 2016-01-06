@@ -1,4 +1,6 @@
-# Houses under construction per municipality, 1879
+#+ summary: Number of houses under construction per municipality in year 1879
+#+ tags:
+#+   - houses
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>

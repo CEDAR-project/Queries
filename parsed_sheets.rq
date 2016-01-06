@@ -1,4 +1,6 @@
-# Get the number of sheets parsed as raw-data
+#+ summary: Number of census tables parsed
+#+ tags:
+#+   - dataStore
 
 PREFIX dcat:    <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>

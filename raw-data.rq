@@ -1,4 +1,6 @@
-# Get a list of raw datasets and their location
+#+ summary: Source data by dataset identifier, source file name, raw data download URL, and number of contained census tables
+#+ tags:
+#+   - dataStore
 
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>

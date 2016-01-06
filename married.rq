@@ -1,4 +1,6 @@
-# Evolution of the number of married women over the years
+#+ summary: Number of married female inhabitants by year
+#+ tags:
+#+   - maritalStatus
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>

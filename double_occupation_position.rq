@@ -1,4 +1,6 @@
-# Observations with more than one occupation position
+#+ summary: Observations with more than one occupation position
+#+ tags:
+#+   - errorDetection
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>

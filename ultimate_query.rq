@@ -1,4 +1,6 @@
-# Query for all the data points and their associated dimensions
+#+ summary:  All harmonized observations
+#+ tags:
+#+   - dataStore
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
 PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>

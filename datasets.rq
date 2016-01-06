@@ -1,3 +1,7 @@
+#+ summary: Source file names and number of census tables per each
+#+ tags:
+#+   - dataStore
+
 prefix qb: <http://purl.org/linked-data/cube#>
 prefix prov: <http://www.w3.org/ns/prov#>
 prefix dcat: <http://www.w3.org/ns/dcat#>

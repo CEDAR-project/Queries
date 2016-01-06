@@ -1,4 +1,6 @@
-# Occupied houses per municipality, 1879
+#+ summary: Number of occupied houses per municipality in year 1879
+#+ tags:
+#+   - houses
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>

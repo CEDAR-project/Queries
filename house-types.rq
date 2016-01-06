@@ -1,4 +1,6 @@
-# Number of houses according to their type per municipality, from 1859 until 1920
+#+ summary: Number of houses by their type per municipality from 1859 until 1920
+#+ tags:
+#+   - houses
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
