@@ -8,6 +8,7 @@ PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX gg: <http://www.gemeentegeschiedenis.nl/amco/>
  
 SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
