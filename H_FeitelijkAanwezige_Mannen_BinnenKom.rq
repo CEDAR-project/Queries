@@ -1,0 +1,25 @@
+#+ summary: Feitelijk Aanwezige Mannen binnen de Kom
+#+ tags: 
+#+   - Harmonized Tables 1859-1920
+
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
+
+SELECT ?municipality ?year (SUM(?pop) AS ?tot)
+FROM <urn:graph:cedar-mini:release>
+WHERE { ?obs a qb:Observation . 
+        ?obs cedar:population ?pop . 
+        ?obs sdmx-dimension:refArea ?municipality .
+        ?obs sdmx-dimension:sex sdmx-code:sex-M .
+        ?obs cedar:residenceStatus <http://lod.cedar-project.nl/vocab/cedar-residenceStatus#FeitelijkeAanwezig> .
+        ?obs cedar:Kom <http://lod.cedar-project.nl/vocab/cedar-Kom#BinnenKom> .
+        FILTER (NOT EXISTS {?obs cedar:houseType ?house })  
+        ?slice a qb:Slice.
+        ?slice qb:observation ?obs.
+        ?slice sdmx-dimension:refPeriod ?year .
+        FILTER (NOT EXISTS {?obs cedar:isTotal ?total }) .
+        FILTER (?year IN (1859, 1869, 1879, 1889, 1899, 1909, 1920)) .
+} GROUP BY ?municipality ?year ORDER BY ?municipality
