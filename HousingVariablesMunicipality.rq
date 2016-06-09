@@ -7,15 +7,15 @@ PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
  
-SELECT ?municipality ?year ?residenceStatus (SUM(?pop) AS ?tot)
+SELECT ?municipality ?year ?houseType (SUM(?pop) AS ?tot)
 FROM <urn:graph:cedar-mini:release>
 WHERE { ?obs a qb:Observation . 
         ?obs cedar:population ?pop . 
         ?obs ?municipality <http://www.gemeentegeschiedenis.nl/amco/10750> .
-        ?obs cedar:residenceStatus ?residenceStatus .        
+        ?obs cedar:houseType ?houseType .        
         ?slice a qb:Slice.
         ?slice qb:observation ?obs.
         ?slice sdmx-dimension:refPeriod ?year .
         FILTER (NOT EXISTS {?obs cedar:isTotal ?total }) .
         FILTER (?year IN (1889)) .
-} GROUP BY ?municipality ?year ?residenceStatus ORDER BY ?municipality
+} GROUP BY ?municipality ?year ?houseType ORDER BY ?municipality
