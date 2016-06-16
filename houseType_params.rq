@@ -13,7 +13,7 @@ PREFIX gg: <http://www.gemeentegeschiedenis.nl/amco/>
 SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
 	?obs sdmx-dimension:refArea ?_location_iri.
-	?obs cedar:Kom ?_Kom_iri
+	?obs cedar:Kom ?_Kom_iri.
 	?obs cedarterms:population ?pop.
 	?slice a qb:Slice.
 	?slice qb:observation ?obs.
