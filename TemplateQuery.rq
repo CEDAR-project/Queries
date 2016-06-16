@@ -1,6 +1,6 @@
 #+ summary: All variables included
 #+ tags: 
-#+   Template_Query
+#+   - Harmonized Tables 1859-1920
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
 PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
