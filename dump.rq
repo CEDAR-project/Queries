@@ -1,4 +1,4 @@
-#+ summary:  All harmonized observations (first 10)
+#+ summary:  Dump of all observations and variables of the database
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
 PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
@@ -7,7 +7,7 @@ PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
  
-SELECT DISTINCT ?obs ?location ?pop ?year ?residenceStatus ?sex ?istotal ?houseType FROM <urn:graph:cedar-mini:release> WHERE {
+SELECT DISTINCT ?obs ?location ?kom ?pop ?year ?residenceStatus ?sex ?istotal ?houseType FROM <urn:graph:cedar-mini:release> WHERE {
 	?obs a qb:Observation.
 	?obs sdmx-dimension:refArea ?location.
 	?obs cedarterms:population ?pop.
@@ -16,6 +16,7 @@ SELECT DISTINCT ?obs ?location ?pop ?year ?residenceStatus ?sex ?istotal ?houseT
 	?slice sdmx-dimension:refPeriod ?year.
 	OPTIONAL {?obs cedarterms:residenceStatus ?residenceStatus.}
 	OPTIONAL {?obs sdmx-dimension:sex ?sex.}
+	OPTIONAL {?obs cedarterms:Kom ?kom.}
 	OPTIONAL {?obs cedarterms:isTotal ?istotal.}
 	OPTIONAL {?obs cedarterms:houseType ?houseType.}
 }
