@@ -1,6 +1,6 @@
 #+ summary: Number of temporarily present inhabitants in ships per municipality in year 1899
 #+ tags:
-#+   - residenceStatus
+#+   - houseType
  
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX cedar: <http://lod.cedar-project.nl/vocab/cedar#>
