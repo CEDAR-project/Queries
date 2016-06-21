@@ -19,6 +19,6 @@ SELECT (SUM(?pop) AS ?tot) FROM <urn:graph:cedar-mini:release> WHERE {
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod ?_year_integer.
 	?obs cedarterms:houseType ?_houseType_iri.
-	OPTIONAL { ?obs cedarterms:residenceStatus ?_residenceStatus_iri }
+	?obs cedarterms:residenceStatus ?_residenceStatus_iri .
 	FILTER (NOT EXISTS {?obs cedarterms:isTotal ?total })
 }
