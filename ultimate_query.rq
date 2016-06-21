@@ -14,13 +14,9 @@ SELECT DISTINCT * FROM <urn:graph:cedar-mini:release> WHERE {
 	?slice a qb:Slice.
 	?slice qb:observation ?obs.
 	?slice sdmx-dimension:refPeriod ?year.
-	OPTIONAL {?obs maritalstatus:maritalStatus ?maritalstatus.}
+	OPTIONAL {?obs cedarterms:residenceStatus ?residenceStatus.}
 	OPTIONAL {?obs sdmx-dimension:sex ?sex.}
 	OPTIONAL {?obs cedarterms:isTotal ?istotal.}
-	OPTIONAL {?obs cedarterms:occupation ?occupation.}
-	OPTIONAL {?obs cedarterms:occupationPosition ?position.}
-	OPTIONAL {?obs cedarterms:ageRange ?age.}
-	OPTIONAL {?obs cedarterms:houseType ?house.}
-	OPTIONAL {?obs cedarterms:hasBelief ?belief.}
-} LIMIT 10
+	OPTIONAL {?obs cedarterms:houseType ?houseType.}
+}
 
