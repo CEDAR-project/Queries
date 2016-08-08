@@ -1,7 +1,7 @@
 #+ summary: Number of housing types according to residence status, location and year
 #+ tags: 
 #+   - houseType
-#+ pagination : 100
+#+ pagination: 100
 
 PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
 PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
