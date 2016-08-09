@@ -1,6 +1,7 @@
 #+ summary: Most occurring headers in the raw dataset
 #+ tags:
 #+   - metadata
+#+ pagination: 100
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
