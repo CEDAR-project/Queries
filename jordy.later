@@ -1,0 +1,35 @@
+# Number of inhabitants (juridisch aanwezig) and stock of houses (bewoonde huizen) per municipality and year
+# Includes the ratio of inhabitants per house
+# Consider this query for the grlc API
+
+PREFIX cedar: <http://lod.cedar-project.nl:8888/cedar/resource/>
+PREFIX maritalstatus: <http://lod.cedar-project.nl/vocab/cedar-maritalstatus#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
+PREFIX cedarterms: <http://lod.cedar-project.nl/vocab/cedar#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX gg: <http://www.gemeentegeschiedenis.nl/amco/>
+ 
+SELECT ?location ?year (SUM(?pop) AS ?population) (SUM(?pop2) AS ?houses) ((SUM(?pop) / SUM(?pop2)) AS ?ratio) FROM <urn:graph:cedar-mini:release> WHERE {
+{
+	?obs a qb:Observation.
+	?obs sdmx-dimension:refArea ?location.
+	?obs cedarterms:population ?pop.
+        ?obs cedarterms:residenceStatus <http://lod.cedar-project.nl/vocab/cedar-residenceStatus#JuridischAanwezig> .
+	?slice a qb:Slice.
+	?slice qb:observation ?obs.
+	?slice sdmx-dimension:refPeriod ?year.
+        FILTER (NOT EXISTS {?obs cedarterms:houseType ?house }) .
+	FILTER (NOT EXISTS {?obs cedarterms:isTotal ?total }) .
+} UNION {
+        ?obs2 a qb:Observation.
+	?obs2 sdmx-dimension:refArea ?location.
+	?obs2 cedarterms:population ?pop2.
+        ?obs2 cedarterms:houseType <http://lod.cedar-project.nl/vocab/cedar#house-BewoondeHuizen> .
+        ?slice2 a qb:Slice.
+	?slice2 qb:observation ?obs2.
+	?slice2 sdmx-dimension:refPeriod ?year.
+        FILTER (NOT EXISTS {?obs2 cedarterms:residenceStatus ?residenceStatus }) .
+	FILTER (NOT EXISTS {?obs2 cedarterms:isTotal ?total2 }) .
+}
+} ORDER BY ?year ?location
